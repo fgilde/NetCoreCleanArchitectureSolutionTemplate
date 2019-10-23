@@ -1,0 +1,22 @@
+<VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Project">
+  <TemplateData>
+    <Name>Resources</Name>
+    <ProjectType>CSharp</ProjectType>
+    <CreateNewFolder>true</CreateNewFolder>
+    <DefaultName>Resources</DefaultName>
+    <ProvideDefaultName>true</ProvideDefaultName>
+    <CreateInPlace>true</CreateInPlace>
+    <Icon>__TemplateIcon.png</Icon>
+    <PreviewImage>__PreviewImage.png</PreviewImage>
+  </TemplateData>
+  <TemplateContent>
+    <Project TargetFileName="$ext_safeprojectname$.Resources.csproj" File="Resources.csproj" ReplaceParameters="true">
+      <Folder Name="Serializer" TargetFolderName="Serializer">
+        <ProjectItem ReplaceParameters="true" TargetFileName="EnumerationConverter.cs">EnumerationConverter.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="JsonSerializer.cs">JsonSerializer.cs</ProjectItem>
+      </Folder>
+      <ProjectItem ReplaceParameters="true" TargetFileName="DateProvider.cs">DateProvider.cs</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="ServiceCollectionExtensions.cs">ServiceCollectionExtensions.cs</ProjectItem>
+    </Project>
+  </TemplateContent>
+</VSTemplate>

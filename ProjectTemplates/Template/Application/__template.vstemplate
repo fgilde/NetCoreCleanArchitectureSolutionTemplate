@@ -1,0 +1,47 @@
+<VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Project">
+  <TemplateData>
+    <Name>Application</Name>
+    <ProjectType>CSharp</ProjectType>
+    <CreateNewFolder>true</CreateNewFolder>
+    <DefaultName>Application</DefaultName>
+    <ProvideDefaultName>true</ProvideDefaultName>
+    <CreateInPlace>true</CreateInPlace>
+    <Icon>__TemplateIcon.png</Icon>
+    <PreviewImage>__PreviewImage.png</PreviewImage>
+  </TemplateData>
+  <TemplateContent>
+    <Project TargetFileName="$ext_safeprojectname$.Application.csproj" File="Application.csproj" ReplaceParameters="true">
+      <Folder Name="Behaviours" TargetFolderName="Behaviours">
+        <ProjectItem ReplaceParameters="true" TargetFileName="LoggingBehaviour.cs">LoggingBehaviour.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="ValidationBehaviour.cs">ValidationBehaviour.cs</ProjectItem>
+      </Folder>
+      <Folder Name="Contracts" TargetFolderName="Contracts">
+        <Folder Name="Data" TargetFolderName="Data">
+          <ProjectItem ReplaceParameters="true" TargetFileName="IUnitOfWork.cs">IUnitOfWork.cs</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="IRepository.cs">IRepository.cs</ProjectItem>
+        </Folder>
+        <ProjectItem ReplaceParameters="true" TargetFileName="IDateProvider.cs">IDateProvider.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="IJsonSerializer.cs">IJsonSerializer.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="SuppressAttribute.cs">SuppressAttribute.cs</ProjectItem>
+      </Folder>
+
+    <Folder Name="RequestHandling" TargetFolderName="RequestHandling">
+        <Folder Name="MyEntity" TargetFolderName="MyEntity">
+          <ProjectItem ReplaceParameters="true" TargetFileName="CreateMyEntity.cs">CreateMyEntity.cs</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="DeleteMyEntity.cs">DeleteMyEntity.cs</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="GetMyEntity.cs">GetMyEntity.cs</ProjectItem>
+        </Folder>
+        <Folder Name="System" TargetFolderName="System">
+          <Folder Name="Models" TargetFolderName="Models">
+            <ProjectItem ReplaceParameters="true" TargetFileName="VersionInfoModel.cs">VersionInfoModel.cs</ProjectItem>
+          </Folder>
+          <ProjectItem ReplaceParameters="true" TargetFileName="GetVersion.cs">GetVersion.cs</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="InitializeApplication.cs">InitializeApplication.cs</ProjectItem>
+        </Folder>
+    </Folder>
+
+      <ProjectItem ReplaceParameters="true" TargetFileName="Constants.cs">Constants.cs</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="ServiceCollectionExtensions.cs">ServiceCollectionExtensions.cs</ProjectItem>
+    </Project>
+  </TemplateContent>
+</VSTemplate>

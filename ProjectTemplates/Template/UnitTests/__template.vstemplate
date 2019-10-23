@@ -1,0 +1,42 @@
+<VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Project">
+  <TemplateData>
+    <Name>UnitTests</Name>
+    <ProjectType>CSharp</ProjectType>
+    <CreateNewFolder>true</CreateNewFolder>
+    <DefaultName>UnitTests</DefaultName>
+    <ProvideDefaultName>true</ProvideDefaultName>
+    <CreateInPlace>true</CreateInPlace>
+    <Icon>__TemplateIcon.png</Icon>
+    <PreviewImage>__PreviewImage.png</PreviewImage>
+  </TemplateData>
+  <TemplateContent>
+    <Project TargetFileName="$ext_safeprojectname$.UnitTests.csproj" File="UnitTests.csproj" ReplaceParameters="true">
+      <Folder Name="Application" TargetFolderName="Application">
+        <Folder Name="System" TargetFolderName="System">
+          <ProjectItem ReplaceParameters="true" TargetFileName="GetVersionTest.cs">GetVersionTest.cs</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="InitializeApplicationTest.cs">InitializeApplicationTest.cs</ProjectItem>
+        </Folder>
+      </Folder>
+      <Folder Name="Architecture" TargetFolderName="Architecture">
+        <ProjectItem ReplaceParameters="true" TargetFileName="ApplicationAssemblyTest.cs">ApplicationAssemblyTest.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="AssemblyNames.cs">AssemblyNames.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="DomainAssemblyTest.cs">DomainAssemblyTest.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="PersistenceAssemblyTest.cs">PersistenceAssemblyTest.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="ResourceAssemblyTest.cs">ResourceAssemblyTest.cs</ProjectItem>
+      </Folder>
+      <Folder Name="Domain" TargetFolderName="Domain">
+       
+      </Folder>
+      <Folder Name="Persistence" TargetFolderName="Persistence" />
+      <Folder Name="Resources" TargetFolderName="Resources">
+        <ProjectItem ReplaceParameters="true" TargetFileName="JsonSerializerTest.cs">JsonSerializerTest.cs</ProjectItem>
+      </Folder>
+      <Folder Name="TestHelper" TargetFolderName="TestHelper">
+        <ProjectItem ReplaceParameters="true" TargetFileName="ApplicationTest.cs">ApplicationTest.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="Asserts.cs">Asserts.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="Data.cs">Data.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="TestOverrides.cs">TestOverrides.cs</ProjectItem>
+      </Folder>
+    </Project>
+  </TemplateContent>
+</VSTemplate>

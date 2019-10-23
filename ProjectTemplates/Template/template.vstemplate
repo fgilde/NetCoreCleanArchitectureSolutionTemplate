@@ -1,0 +1,57 @@
+<VSTemplate Version="2.0.0" Type="ProjectGroup"
+    xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+    <TemplateData>
+        <Name>CCA-Template</Name>
+        <Description>CCA clean architecture solution template</Description>
+    	<Icon>__TemplateIcon.png</Icon>
+   		<PreviewImage>__PreviewImage.png</PreviewImage>
+        <ProjectType>CSharp</ProjectType>
+		<LanguageTag>CSharp</LanguageTag>
+		<SortOrder>9999</SortOrder>
+    	<DefaultName>CCA.YourAppName</DefaultName>
+    	<ProvideDefaultName>true</ProvideDefaultName>		
+		<EnableLocationBrowseButton>true</EnableLocationBrowseButton>
+      
+    </TemplateData>
+
+    <TemplateContent>
+      <CustomParameters>
+        <!--Place your default paramter values here--> 
+        <CustomParameter Name="$useBlazor$" Value="True "/>
+      </CustomParameters>
+      <ProjectCollection>
+            <SolutionFolder Name="src">
+                <ProjectTemplateLink ProjectName="$safeprojectname$.Presentation.Web" CopyParameters="true" >
+                    Presentation.Web\__template.vstemplate
+                </ProjectTemplateLink>
+                <ProjectTemplateLink ProjectName="$safeprojectname$.Presentation.Wpf" CopyParameters="true">
+                    Presentation.Wpf\__template.vstemplate
+                </ProjectTemplateLink>
+                <ProjectTemplateLink ProjectName="$safeprojectname$.Presentation.Console" CopyParameters="true">
+                    Presentation.Console\__template.vstemplate
+                </ProjectTemplateLink>
+                <ProjectTemplateLink ProjectName="$safeprojectname$.Domain" CopyParameters="true">
+                    Domain\__template.vstemplate
+                </ProjectTemplateLink>
+                <ProjectTemplateLink ProjectName="$safeprojectname$.Application" CopyParameters="true">
+                    Application\__template.vstemplate
+                </ProjectTemplateLink>
+                <ProjectTemplateLink ProjectName="$safeprojectname$.Resources" CopyParameters="true">
+                    Resources\__template.vstemplate
+                </ProjectTemplateLink>
+                <ProjectTemplateLink ProjectName="$safeprojectname$.Persistence" CopyParameters="true">
+                    Persistence\__template.vstemplate
+                </ProjectTemplateLink>
+            </SolutionFolder>
+            <SolutionFolder Name="test">
+                <ProjectTemplateLink ProjectName="$safeprojectname$.UnitTests" CopyParameters="true">
+                    UnitTests\__template.vstemplate
+                </ProjectTemplateLink>
+            </SolutionFolder>
+        </ProjectCollection>
+    </TemplateContent>
+    <WizardExtension>
+      <Assembly>VSIX-CCA-ProjectTemplate, Version=1.0.0.0, Culture=Neutral, PublicKeyToken=934ebf52206961af</Assembly>
+      <FullClassName>VSIX_CCA_ProjectTemplate.WizardImplementation</FullClassName>
+    </WizardExtension>
+</VSTemplate>

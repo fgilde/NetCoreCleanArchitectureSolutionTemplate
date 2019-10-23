@@ -1,0 +1,35 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+	<PropertyGroup>
+		<TargetFramework>netcoreapp3.0</TargetFramework>
+	</PropertyGroup>
+
+	<Import Project="..\$ext_safeprojectname$.Domain\shared.props" />
+
+	<ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.SpaServices" Version="3.0.0" />
+		<PackageReference Include="Microsoft.AspNetCore.SpaServices.Extensions" Version="3.0.0" />
+
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\$ext_safeprojectname$.Application\$ext_safeprojectname$.Application.csproj" />
+		<ProjectReference Include="..\$ext_safeprojectname$.Persistence\$ext_safeprojectname$.Persistence.csproj" />
+		<ProjectReference Include="..\$ext_safeprojectname$.Resources\$ext_safeprojectname$.Resources.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Content Update="appsettings.json">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </Content>
+	</ItemGroup>
+
+	<!-- Publishing client files (SPA) -->
+	<!--<Target Name="PublishFrontend" AfterTargets="PrepareForPublish">
+		<ItemGroup>
+			<ClientFiles Include="..\..\Frontend\build\**" />
+			<ContentWithTargetPath Include="@(ClientFiles->'%(FullPath)')" TargetPath="clientApp/%(ClientFiles.RecursiveDir)%(Filename)%(Extension)" CopyToPublishDirectory="PreserveNewest" />
+		</ItemGroup>
+	</Target>-->
+
+</Project>

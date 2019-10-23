@@ -1,0 +1,30 @@
+<VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Project">
+  <TemplateData>
+    <Name>Domain</Name>
+    <ProjectType>CSharp</ProjectType>
+    <CreateNewFolder>true</CreateNewFolder>
+    <DefaultName>Domain</DefaultName>
+    <ProvideDefaultName>true</ProvideDefaultName>
+    <CreateInPlace>true</CreateInPlace>
+    <Icon>__TemplateIcon.png</Icon>
+    <PreviewImage>__PreviewImage.png</PreviewImage>
+  </TemplateData>
+  <TemplateContent>
+    <Project TargetFileName="$ext_safeprojectname$.Domain.csproj" File="Domain.csproj" ReplaceParameters="true">
+      <Folder Name="Entities" TargetFolderName="Entities">      
+        <ProjectItem ReplaceParameters="true" TargetFileName="EntityBase.cs">EntityBase.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="MyEntity.cs">MyEntity.cs</ProjectItem>
+      </Folder>
+      <Folder Name="Exceptions" TargetFolderName="Exceptions">
+        <ProjectItem ReplaceParameters="true" TargetFileName="DomainException.cs">DomainException.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="Errors.cs">Errors.cs</ProjectItem>
+      </Folder>
+      <Folder Name="Localization" TargetFolderName="Localization">
+        <ProjectItem ReplaceParameters="true" TargetFileName="SharedResources.resx">SharedResources.resx</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="SharedResources.Designer.cs">SharedResources.Designer.cs</ProjectItem>
+      </Folder>
+      <ProjectItem ReplaceParameters="false" TargetFileName="ReadMe.md">ReadMe.md</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="shared.props">shared.props</ProjectItem>
+    </Project>
+  </TemplateContent>
+</VSTemplate>

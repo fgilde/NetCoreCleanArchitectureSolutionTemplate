@@ -1,0 +1,35 @@
+﻿<Project Sdk="Microsoft.NET.Sdk" ToolsVersion="Current">
+
+	<PropertyGroup>
+		<TargetFramework>netcoreapp3.0</TargetFramework>
+		<NoWarn>1701;1702;xUnit2013</NoWarn>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="FakeItEasy" Version="5.2.0" />
+		<FrameWorkReference Include="Microsoft.AspNetCore.App" />
+		<PackageReference Include="Microsoft.Extensions.Configuration" Version="3.0.0" />
+		<PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="3.0.0" />
+		<PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.3.0" />
+		<PackageReference Include="NetArchTest.Rules" Version="1.2.2" />
+		<PackageReference Include="xunit" Version="2.4.1" />
+		<PackageReference Include="xunit.runner.visualstudio" Version="2.4.1" />
+		<PackageReference Include="coverlet.msbuild" Version="2.7.0">
+		  <PrivateAssets>all</PrivateAssets>
+		  <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\$ext_safeprojectname$.Application\$ext_safeprojectname$.Application.csproj" />
+		<ProjectReference Include="..\$ext_safeprojectname$.Domain\$ext_safeprojectname$.Domain.csproj" />
+		<ProjectReference Include="..\$ext_safeprojectname$.Persistence\$ext_safeprojectname$.Persistence.csproj" />
+		<ProjectReference Include="..\$ext_safeprojectname$.Resources\$ext_safeprojectname$.Resources.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Folder Include="Domain\Enumerations\" />
+	  <Folder Include="Domain\ValueObjects\" />
+	  <Folder Include="Persistence\" />
+	</ItemGroup>
+</Project>

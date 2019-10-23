@@ -1,0 +1,70 @@
+<VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Project">
+  <TemplateData>
+    <Name>Presentation.Web</Name>
+    <ProjectType>CSharp</ProjectType>
+    <CreateNewFolder>true</CreateNewFolder>
+    <DefaultName>Presentation.Web</DefaultName>
+    <ProvideDefaultName>true</ProvideDefaultName>
+    <CreateInPlace>true</CreateInPlace>
+    <Icon>__TemplateIcon.png</Icon>
+    <PreviewImage>__PreviewImage.png</PreviewImage>
+  </TemplateData>
+  <TemplateContent>
+    <Project TargetFileName="$ext_safeprojectname$.Presentation.Web.csproj" File="Presentation.Web.csproj" ReplaceParameters="true">
+      <Folder Name="Properties" TargetFolderName="Properties">
+        <ProjectItem ReplaceParameters="true" TargetFileName="launchSettings.json">launchSettings.json</ProjectItem>
+      </Folder>
+      <Folder Name="Controllers" TargetFolderName="Controllers">
+        <ProjectItem ReplaceParameters="true" TargetFileName="BaseController.cs">BaseController.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="SystemController.cs">SystemController.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="MyEntityController.cs">MyEntityController.cs</ProjectItem>
+      </Folder>
+      <Folder Name="Data" TargetFolderName="Data">
+        <ProjectItem ReplaceParameters="true" TargetFileName="WeatherForecastService.cs">WeatherForecastService.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="WeatherForecast.cs">WeatherForecast.cs</ProjectItem>
+      </Folder>
+       <Folder Name="Pages" TargetFolderName="Pages">
+        <ProjectItem ReplaceParameters="true" TargetFileName="_Host.cshtml">_Host.cshtml</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="Counter.razor">Counter.razor</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="FetchData.razor">FetchData.razor</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="Error.razor">Error.razor</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="Index.razor">Index.razor</ProjectItem>
+      </Folder>
+      <Folder Name="Shared" TargetFolderName="Shared">
+        <ProjectItem ReplaceParameters="true" TargetFileName="MainLayout.razor">MainLayout.razor</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="NavMenu.razor">NavMenu.razor</ProjectItem>
+      </Folder>
+      <Folder Name="wwwroot" TargetFolderName="wwwroot">
+        <ProjectItem ReplaceParameters="false" TargetFileName="FavIcon.ico">FavIcon.ico</ProjectItem>
+        <Folder Name="css" TargetFolderName="css">
+          <ProjectItem ReplaceParameters="true" TargetFileName="site.css">site.css</ProjectItem>
+          <Folder Name="bootstrap" TargetFolderName="bootstrap">
+            <ProjectItem ReplaceParameters="true" TargetFileName="bootstrap.min.css">bootstrap.min.css</ProjectItem>
+            <ProjectItem ReplaceParameters="true" TargetFileName="bootstrap.min.css.map">bootstrap.min.css.map</ProjectItem>
+          </Folder>   
+          <Folder Name="open-iconic" TargetFolderName="open-iconic">
+            <Folder Name="font" TargetFolderName="font">
+              <Folder Name="css" TargetFolderName="css">
+                <ProjectItem ReplaceParameters="true" TargetFileName="open-iconic-bootstrap.min.css">open-iconic-bootstrap.min.css</ProjectItem>
+              </Folder>   
+              <Folder Name="fonts" TargetFolderName="fonts">
+                <ProjectItem ReplaceParameters="false" TargetFileName="open-iconic.eot">open-iconic.eot</ProjectItem>
+                <ProjectItem ReplaceParameters="false" TargetFileName="open-iconic.otf">open-iconic.otf</ProjectItem>
+                <ProjectItem ReplaceParameters="false" TargetFileName="open-iconic.svg">open-iconic.svg</ProjectItem>
+                <ProjectItem ReplaceParameters="false" TargetFileName="open-iconic.ttf">open-iconic.ttf</ProjectItem>
+                <ProjectItem ReplaceParameters="false" TargetFileName="open-iconic.woff">open-iconic.woff</ProjectItem>
+              </Folder>   
+            </Folder>                      
+        </Folder>
+      </Folder>
+      </Folder>
+
+      <ProjectItem ReplaceParameters="true" TargetFileName="_Imports.razor">_Imports.razor</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="App.razor">App.razor</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="appsettings.json">appsettings.json</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="appsettings.Development.json">appsettings.Development.json</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="Program.cs">Program.cs</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="Startup.cs">Startup.cs</ProjectItem>
+    </Project>
+  </TemplateContent>
+</VSTemplate>

@@ -1,0 +1,1 @@
+powershell -executionpolicy remotesigned -File xxx_build.ps1

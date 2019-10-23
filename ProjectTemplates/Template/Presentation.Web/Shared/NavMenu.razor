@@ -1,0 +1,52 @@
+﻿<div class="sidebar @(menuSmall ? "smallstyle" : null)">
+    <div class="top-row navbar navbar-dark">
+
+        <span @onclick="ToggleMenuSize" class="oi oi-menu pointer navbar-expander"></span>
+        <span @onclick="ToggleMenuVisibility" class="oi oi-menu pointer navbar-toggler"></span>
+
+        <a class="navbar-brand extendedinfo" href="/">$ext_safeprojectname$</a>
+
+    </div>
+
+    <div class="@NavMenuCssClass">
+        <ul class="nav flex-column">
+            <li class="nav-item px-3">
+                <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
+                    <span class="oi oi-home" aria-hidden="true"></span>
+                    <span class="extendedinfo">Home</span>
+                </NavLink>
+            </li>
+            <li class="nav-item px-3">
+                <NavLink class="nav-link" href="counter">
+                    <span class="oi oi-plus" aria-hidden="true"></span>
+                    <span class="extendedinfo">Counter</span>
+                </NavLink>
+            </li>
+            <li class="nav-item px-3">
+                <NavLink class="nav-link" href="fetchdata">
+                    <span class="oi oi-list-rich" aria-hidden="true"></span> 
+                    <span class="extendedinfo">Fetch data</span>
+                </NavLink>
+            </li>
+        </ul>
+    </div>
+</div>
+
+@code {
+    bool collapseNavMenu = true;
+
+    string NavMenuCssClass => collapseNavMenu ? "collapse" : null;
+
+    
+    bool menuSmall;
+
+    void ToggleMenuVisibility()
+    {
+collapseNavMenu = !collapseNavMenu;
+    }
+
+    void ToggleMenuSize()
+    {
+    menuSmall = !menuSmall;
+    }
+}

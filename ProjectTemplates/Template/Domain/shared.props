@@ -1,0 +1,18 @@
+<Project>
+	<PropertyGroup>
+		<VersionPrefix>0.1.0</VersionPrefix>
+		<VersionSuffix>DEV-$([System.DateTime]::UtcNow.ToString(yyyyMMdd))</VersionSuffix>
+		<Company>Serviceware SE</Company>
+		<Authors>$(Company)</Authors>
+		<Copyright>Copyright © $(Company) 2018,$([System.DateTime]::Now.Year)</Copyright>
+		<Trademark>$(Company)™</Trademark>
+		<Product>$(Company) Projects</Product>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<AssemblyAttribute Include="System.Runtime.CompilerServices.InternalsVisibleTo">
+			<_Parameter1>$ext_safeprojectname$.UnitTests</_Parameter1>
+		</AssemblyAttribute>
+	</ItemGroup>
+
+</Project>
