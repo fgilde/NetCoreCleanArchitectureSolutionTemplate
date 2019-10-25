@@ -1,57 +1,70 @@
 <VSTemplate Version="2.0.0" Type="ProjectGroup"
     xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
-    <TemplateData>
-        <Name>CCA-Template</Name>
-        <Description>CCA clean architecture solution template</Description>
-    	<Icon>__TemplateIcon.png</Icon>
-   		<PreviewImage>__PreviewImage.png</PreviewImage>
-        <ProjectType>CSharp</ProjectType>
-		<LanguageTag>CSharp</LanguageTag>
-		<SortOrder>9999</SortOrder>
-    	<DefaultName>CCA.YourAppName</DefaultName>
-    	<ProvideDefaultName>true</ProvideDefaultName>		
-		<EnableLocationBrowseButton>true</EnableLocationBrowseButton>
-      
-    </TemplateData>
+  <TemplateData>
+    <Name>Clean Architecture Solution (.NET Core)</Name>
+    <Description>A complete Solution Template for a clean architecture pattern with .NET Core </Description>
+    <Icon>__TemplateIcon.png</Icon>
+    <PreviewImage>__PreviewImage.png</PreviewImage>
+    <ProjectType>CSharp</ProjectType>
+    <PlatformTag>Windows</PlatformTag>
+    <PlatformTag>Linux</PlatformTag>
+    <PlatformTag>macOS</PlatformTag>
+    <ProjectTypeTag>Clean Architecture Solution</ProjectTypeTag>
+    <ProjectTypeTag>Blazor</ProjectTypeTag>
+    <ProjectTypeTag>WPF</ProjectTypeTag>
+    <ProjectTypeTag>Console</ProjectTypeTag>
+    <LanguageTag>CSharp</LanguageTag>
+    <SortOrder>9999</SortOrder>
+    <DefaultName>MyProjectName</DefaultName>
+    <ProvideDefaultName>true</ProvideDefaultName>
+    <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
 
-    <TemplateContent>
-      <CustomParameters>
-        <!--Place your default paramter values here--> 
-        <CustomParameter Name="$useBlazor$" Value="True "/>
-      </CustomParameters>
-      <ProjectCollection>
-            <SolutionFolder Name="src">
-                <ProjectTemplateLink ProjectName="$safeprojectname$.Presentation.Web" CopyParameters="true" >
-                    Presentation.Web\__template.vstemplate
-                </ProjectTemplateLink>
-                <ProjectTemplateLink ProjectName="$safeprojectname$.Presentation.Wpf" CopyParameters="true">
-                    Presentation.Wpf\__template.vstemplate
-                </ProjectTemplateLink>
-                <ProjectTemplateLink ProjectName="$safeprojectname$.Presentation.Console" CopyParameters="true">
-                    Presentation.Console\__template.vstemplate
-                </ProjectTemplateLink>
-                <ProjectTemplateLink ProjectName="$safeprojectname$.Domain" CopyParameters="true">
-                    Domain\__template.vstemplate
-                </ProjectTemplateLink>
-                <ProjectTemplateLink ProjectName="$safeprojectname$.Application" CopyParameters="true">
-                    Application\__template.vstemplate
-                </ProjectTemplateLink>
-                <ProjectTemplateLink ProjectName="$safeprojectname$.Resources" CopyParameters="true">
-                    Resources\__template.vstemplate
-                </ProjectTemplateLink>
-                <ProjectTemplateLink ProjectName="$safeprojectname$.Persistence" CopyParameters="true">
-                    Persistence\__template.vstemplate
-                </ProjectTemplateLink>
-            </SolutionFolder>
-            <SolutionFolder Name="test">
-                <ProjectTemplateLink ProjectName="$safeprojectname$.UnitTests" CopyParameters="true">
-                    UnitTests\__template.vstemplate
-                </ProjectTemplateLink>
-            </SolutionFolder>
-        </ProjectCollection>
-    </TemplateContent>
-    <WizardExtension>
-      <Assembly>VSIX-CCA-ProjectTemplate, Version=1.0.0.0, Culture=Neutral, PublicKeyToken=934ebf52206961af</Assembly>
-      <FullClassName>VSIX_CCA_ProjectTemplate.WizardImplementation</FullClassName>
-    </WizardExtension>
+  </TemplateData>
+
+  <TemplateContent>
+    <CustomParameters>
+      <!--Place your default parameter values here-->
+      <CustomParameter Name="$addBlazor$" Value="True"/>
+      <CustomParameter Name="$addSPA$" Value="True"/>
+      <CustomParameter Name="$addWPF$" Value="False"/>
+      <CustomParameter Name="$addConsole$" Value="False"/>
+      <CustomParameter Name="$addSignalR$" Value="True"/>
+      <CustomParameter Name="$addServiceBus$" Value="True"/>
+      <CustomParameter Name="$enableDocker$" Value="False"/>
+    </CustomParameters>
+    <ProjectCollection>
+      <SolutionFolder Name="src">
+        <ProjectTemplateLink ProjectName="$safeprojectname$.Presentation.Web" CopyParameters="true" >
+          Presentation.Web\__template.vstemplate
+        </ProjectTemplateLink>
+        <ProjectTemplateLink ProjectName="$safeprojectname$.Presentation.Wpf" CopyParameters="true">
+          Presentation.Wpf\__template.vstemplate
+        </ProjectTemplateLink>
+        <ProjectTemplateLink ProjectName="$safeprojectname$.Presentation.Console" CopyParameters="true">
+            Presentation.Console\__template.vstemplate
+          </ProjectTemplateLink>
+        <ProjectTemplateLink ProjectName="$safeprojectname$.Domain" CopyParameters="true">
+          Domain\__template.vstemplate
+        </ProjectTemplateLink>
+        <ProjectTemplateLink ProjectName="$safeprojectname$.Application" CopyParameters="true">
+          Application\__template.vstemplate
+        </ProjectTemplateLink>
+        <ProjectTemplateLink ProjectName="$safeprojectname$.Resources" CopyParameters="true">
+          Resources\__template.vstemplate
+        </ProjectTemplateLink>
+        <ProjectTemplateLink ProjectName="$safeprojectname$.Persistence" CopyParameters="true">
+          Persistence\__template.vstemplate
+        </ProjectTemplateLink>
+      </SolutionFolder>
+      <SolutionFolder Name="test">
+        <ProjectTemplateLink ProjectName="$safeprojectname$.UnitTests" CopyParameters="true">
+          UnitTests\__template.vstemplate
+        </ProjectTemplateLink>
+      </SolutionFolder>
+    </ProjectCollection>
+  </TemplateContent>
+  <WizardExtension>
+    <Assembly>VSIX-CCA-ProjectTemplate, Version=1.0.0.0, Culture=Neutral, PublicKeyToken=934ebf52206961af</Assembly>
+    <FullClassName>VSIX_CCA_ProjectTemplate.WizardImplementation</FullClassName>
+  </WizardExtension>
 </VSTemplate>

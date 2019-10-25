@@ -51,6 +51,13 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="EnumerableExtensions.cs" />
+    <Compile Include="ExcludeInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="WizardDialogForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -125,6 +132,12 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
+    <Content Include="__PreviewImage.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="__TemplateIcon.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <None Include="ProjectTemplates\Template\build_zip.bat" />
     <None Include="ProjectTemplates\Template\Domain\ReadMe.md" />
     <None Include="ProjectTemplates\Template\Domain\shared.props" />
@@ -170,49 +183,27 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="ProjectTemplates\Template\Application\Application.csproj" />
-    <Content Include="ProjectTemplates\Template\Application\__PreviewImage.png" />
     <Content Include="ProjectTemplates\Template\Application\__template.vstemplate" />
-    <Content Include="ProjectTemplates\Template\Application\__TemplateIcon.png" />
     <None Include="ProjectTemplates\Template\Domain\Domain.csproj" />
-    <None Include="ProjectTemplates\Template\Domain\__PreviewImage.png" />
     <None Include="ProjectTemplates\Template\Domain\__template.vstemplate" />
-    <None Include="ProjectTemplates\Template\Domain\__TemplateIcon.png" />
     <None Include="ProjectTemplates\Template\Persistence\Persistence.csproj" />
-    <None Include="ProjectTemplates\Template\Persistence\__PreviewImage.png" />
     <None Include="ProjectTemplates\Template\Persistence\__template.vstemplate" />
-    <None Include="ProjectTemplates\Template\Persistence\__TemplateIcon.png" />
     <None Include="ProjectTemplates\Template\Presentation.Console\Presentation.Console.csproj" />
-    <None Include="ProjectTemplates\Template\Presentation.Console\__PreviewImage.png" />
     <None Include="ProjectTemplates\Template\Presentation.Console\__template.vstemplate" />
-    <None Include="ProjectTemplates\Template\Presentation.Console\__TemplateIcon.png" />
     <None Include="ProjectTemplates\Template\Presentation.Web\Presentation.Web.csproj" />
     <Content Include="ProjectTemplates\Template\Presentation.Web\wwwroot\css\bootstrap\bootstrap.min.css" />
     <Content Include="ProjectTemplates\Template\Presentation.Web\wwwroot\css\open-iconic\font\css\open-iconic-bootstrap.min.css" />
     <Content Include="ProjectTemplates\Template\Presentation.Web\wwwroot\css\open-iconic\font\fonts\open-iconic.svg" />
     <Content Include="ProjectTemplates\Template\Presentation.Web\wwwroot\css\site.css" />
     <Content Include="ProjectTemplates\Template\Presentation.Web\wwwroot\favicon.ico" />
-    <None Include="ProjectTemplates\Template\Presentation.Web\__PreviewImage.png" />
     <None Include="ProjectTemplates\Template\Presentation.Web\__template.vstemplate" />
-    <None Include="ProjectTemplates\Template\Presentation.Web\__TemplateIcon.png" />
     <None Include="ProjectTemplates\Template\Presentation.Wpf\Presentation.Wpf.csproj" />
-    <None Include="ProjectTemplates\Template\Presentation.Wpf\__PreviewImage.png" />
     <None Include="ProjectTemplates\Template\Presentation.Wpf\__template.vstemplate" />
-    <None Include="ProjectTemplates\Template\Presentation.Wpf\__TemplateIcon.png" />
     <None Include="ProjectTemplates\Template\Resources\Resources.csproj" />
-    <None Include="ProjectTemplates\Template\Resources\__PreviewImage.png" />
     <None Include="ProjectTemplates\Template\Resources\__template.vstemplate" />
-    <None Include="ProjectTemplates\Template\Resources\__TemplateIcon.png" />
     <Content Include="ProjectTemplates\Template\template.vstemplate" />
     <None Include="ProjectTemplates\Template\UnitTests\UnitTests.csproj" />
-    <None Include="ProjectTemplates\Template\UnitTests\__PreviewImage.png" />
     <None Include="ProjectTemplates\Template\UnitTests\__template.vstemplate" />
-    <None Include="ProjectTemplates\Template\UnitTests\__TemplateIcon.png" />
-    <Content Include="ProjectTemplates\Template\__PreviewImage.png" />
-    <Content Include="ProjectTemplates\Template\__TemplateIcon.png" />
-    <Content Include="template.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <IncludeInVSIX>true</IncludeInVSIX>
-    </Content>
   </ItemGroup>
   <ItemGroup>
     <None Include="ProjectTemplates\Template\Domain\Localization\SharedResources.resx" />
@@ -232,6 +223,10 @@
     <Folder Include="ProjectTemplates\Template\UnitTests\Persistence\" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="WizardDialogForm.resx">
       <DependentUpon>WizardDialogForm.cs</DependentUpon>
     </EmbeddedResource>

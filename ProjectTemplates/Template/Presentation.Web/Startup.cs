@@ -10,7 +10,6 @@ using $ext_safeprojectname$.Resources;
 using Microsoft.AspNetCore.SpaServices.ReactDevelopmentServer;
 using Microsoft.Extensions.Hosting;
 
-
 namespace $safeprojectname$
 {
     public class Startup
@@ -27,14 +26,16 @@ namespace $safeprojectname$
             services.AddApplication();
             services.AddResources();
             services.AddPersistence(this.configuration.GetConnectionString("default"));
+    //SPA $ext_addSPA$
+    //Blazor $ext_addBlazor$
+            $if$ ($ext_addSPA$ == True)
             services.AddSpaStaticFiles(spa => { spa.RootPath = "<path to client build in production>"; });
-            Console.WriteLine("$ext_color1$");
-            Console.WriteLine("$ext_custommessage$");
-            Console.WriteLine("$ext_useBlazor$");
+            $endif$
+            $if$ ($ext_addBlazor$ == True)
             services.AddRazorPages();
             services.AddServerSideBlazor();
-
             services.AddSingleton<WeatherForecastService>();
+            $endif$
             services.AddMvc();
         }
 
@@ -57,9 +58,13 @@ namespace $safeprojectname$
             app.UseRouting();
             app.UseEndpoints(endpoints => {
                 endpoints.MapControllers();
+                $if$ ($ext_addBlazor$ == True)
                 endpoints.MapBlazorHub();
+                $endif$
                 endpoints.MapFallbackToPage("/_Host");
             });
+            
+            $if$ ($ext_addSPA$ == True)
             app.UseSpa(spa =>
             {
                 if (env.IsDevelopment())
@@ -68,6 +73,7 @@ namespace $safeprojectname$
                     spa.UseReactDevelopmentServer(npmScript: "start");
                 }
             });
+            $endif$
         }
     }
 }

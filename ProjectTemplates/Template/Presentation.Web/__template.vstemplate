@@ -23,7 +23,7 @@
         <ProjectItem ReplaceParameters="true" TargetFileName="WeatherForecastService.cs">WeatherForecastService.cs</ProjectItem>
         <ProjectItem ReplaceParameters="true" TargetFileName="WeatherForecast.cs">WeatherForecast.cs</ProjectItem>
       </Folder>
-       <Folder Name="Pages" TargetFolderName="Pages">
+      <Folder Name="Pages" TargetFolderName="Pages">
         <ProjectItem ReplaceParameters="true" TargetFileName="_Host.cshtml">_Host.cshtml</ProjectItem>
         <ProjectItem ReplaceParameters="true" TargetFileName="Counter.razor">Counter.razor</ProjectItem>
         <ProjectItem ReplaceParameters="true" TargetFileName="FetchData.razor">FetchData.razor</ProjectItem>

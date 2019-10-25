@@ -5,8 +5,8 @@
         <DisplayName>clean code architecture Projecttemplate</DisplayName>
         <Description xml:space="preserve">clean architecture solution template
 Samples for: Web (netcore w + blazor), Console (netcore), Wpf (netcore 3) clean arch        </Description>
-        <Icon>template.png</Icon>
-        <PreviewImage>template.png</PreviewImage>
+        <Icon>__TemplateIcon.png</Icon>
+        <PreviewImage>__PreviewImage.png</PreviewImage>
         <Tags>C# CleanArchitectureitecture solution template</Tags>
     </Metadata>
     <Installation>
