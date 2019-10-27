@@ -39,15 +39,15 @@
       </Folder>
       <Folder Name="wwwroot" TargetFolderName="wwwroot">
         <ProjectItem ReplaceParameters="false" TargetFileName="FavIcon.ico">FavIcon.ico</ProjectItem>
-        <ProjectItem ReplaceParameters="True" TargetFileName="test.html">test.html</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="test.html">test.html</ProjectItem>
         <Folder Name="js" TargetFolderName="js">
           <Folder Name="signalr" TargetFolderName="signalr">
             <Folder Name="dist" TargetFolderName="dist">
               <Folder Name="browser" TargetFolderName="browser">
-                <ProjectItem ReplaceParameters="True" TargetFileName="signalr.js">signalr.js</ProjectItem>
-                <ProjectItem ReplaceParameters="True" TargetFileName="signalr.js.map">signalr.js.map</ProjectItem>
-                <ProjectItem ReplaceParameters="True" TargetFileName="signalr.min.js">signalr.min.js</ProjectItem>
-                <ProjectItem ReplaceParameters="True" TargetFileName="signalr.min.js.map">signalr.min.js.map</ProjectItem>
+                <ProjectItem ReplaceParameters="true" TargetFileName="signalr.js">signalr.js</ProjectItem>
+                <ProjectItem ReplaceParameters="true" TargetFileName="signalr.js.map">signalr.js.map</ProjectItem>
+                <ProjectItem ReplaceParameters="true" TargetFileName="signalr.min.js">signalr.min.js</ProjectItem>
+                <ProjectItem ReplaceParameters="true" TargetFileName="signalr.min.js.map">signalr.min.js.map</ProjectItem>
               </Folder>
             </Folder>
           </Folder>
