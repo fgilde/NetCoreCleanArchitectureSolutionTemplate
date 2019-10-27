@@ -34,14 +34,12 @@ namespace $safeprojectname$
             var version = await App.Get<IMediator>().Send(new GetVersion.Request());
             label1.Text = $@"Version: {version.Application}; {version.Runtime}; {version.System} ({DateTime.Now})";
 
-            $if$ ($ext_addServiceBus$ == True)
-            $if$ ($ext_addSignalR$ == True)
+            $if$ ($ext_addSignalR$ == True && $ext_addServiceBus$ == True)
             await App.Get<IMediator>().Send(new SendToServiceBus.Request
             {
                 Queue = Constants.ServiceBusQueues.ClientEventQueue,
                 Content = new ClientEvent(TargetClient.All, "TestFromWpf", new { Runtime = version.Runtime })
             });
-            $endif$
             $endif$
         }
 

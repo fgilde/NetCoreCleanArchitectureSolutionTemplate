@@ -12,9 +12,11 @@ namespace $safeprojectname$
     public static class ServiceCollectionExtensions
     {
         public static IServiceCollection AddApplication(this IServiceCollection services)
-        {
+    {
+            $if$ ($ext_addSignalR$ == True)
             services.AddTransient<ISessionProvider, SimpleSessionProvider>();
             services.AddSignalR();
+            $endif$
             services.AddValidators();
             services.AddTransient(typeof(IPipelineBehavior<,>), typeof(LoggingBehaviour<,>));
             services.AddTransient(typeof(IPipelineBehavior<,>), typeof(ClientEventBehaviour<,>));

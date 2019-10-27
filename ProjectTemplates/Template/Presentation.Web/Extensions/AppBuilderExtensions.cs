@@ -32,8 +32,7 @@ namespace $safeprojectname$.Extensions
             return app;
         }
 
-        $if$ ($ext_addSignalR$ == True)
-        $if$ ($ext_addServiceBus$ == True)
+        $if$ ($ext_addSignalR$ == True && $ext_addServiceBus$ == True)
         public static IApplicationBuilder UseServiceBusClientEventDelegation(this IApplicationBuilder app)
         {
             var tokenSource = new CancellationTokenSource();
@@ -43,7 +42,6 @@ namespace $safeprojectname$.Extensions
             }, tokenSource.Token);
             return app;
         }
-        $endif$
         $endif$
 
         $if$ ($ext_addSignalR$ == True)

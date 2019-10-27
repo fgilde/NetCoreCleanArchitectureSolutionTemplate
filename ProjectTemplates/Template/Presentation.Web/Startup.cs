@@ -68,8 +68,8 @@ namespace $safeprojectname$
             app.UseRouting();
             app.UseEndpoints(endpoints => {
                 endpoints.MapControllers();
-                $if$ ($ext_addBlazor$ == True)endpoints.MapBlazorHub(); $endif$
-                $if$ ($ext_addSignalR$ == True)endpoints.MapHub<ClientEventHub>("/eventHub"); $endif$
+                $if$ ($ext_addBlazor$ == True) endpoints.MapBlazorHub(); $endif$
+                $if$ ($ext_addSignalR$ == True) endpoints.MapHub<ClientEventHub>("/eventHub"); $endif$
                 endpoints.MapFallbackToPage("/_Host");
             });
             
@@ -83,8 +83,8 @@ namespace $safeprojectname$
                 }
             });
             $endif$
-            $if$ ($ext_addSignalR$ == True)
-            $if$ ($ext_addServiceBus$ == True)app.UseServiceBusClientEventDelegation();$endif$
+            $if$ ($ext_addSignalR$ == True && $ext_addServiceBus$ == True)
+            app.UseServiceBusClientEventDelegation();
             $endif$
         }
     }
