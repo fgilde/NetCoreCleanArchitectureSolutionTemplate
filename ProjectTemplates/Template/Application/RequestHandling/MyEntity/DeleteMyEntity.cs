@@ -2,6 +2,7 @@
 using System.Threading.Tasks;
 using FluentValidation;
 using $safeprojectname$.Contracts.Data;
+using $safeprojectname$.Contracts;
 using MediatR;
 
 namespace $safeprojectname$.RequestHandling.MyEntity

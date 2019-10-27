@@ -1,9 +1,12 @@
 ﻿using System;
 using System.Windows;
+using System.ComponentModel;
+using System.Threading;
 using $ext_safeprojectname$.Application.RequestHandling.System;
 using MediatR;
 using Newtonsoft.Json;
 using $ext_safeprojectname$.Application.Contracts;
+using $ext_safeprojectname$.Application;
 using $ext_safeprojectname$.Domain.Entities;
 
 namespace $safeprojectname$

@@ -10,17 +10,15 @@
     <PreviewImage>__PreviewImage.png</PreviewImage>
   </TemplateData>
   <TemplateContent>
-
-    <Folder Name="Configurations" TargetFolderName="Configurations">
-      <ProjectItem ReplaceParameters="true" TargetFileName="MyEntityConfiguration.cs">MyEntityConfiguration.cs</ProjectItem>      
-    </Folder>
-    <Folder Name="Migrations" TargetFolderName="Migrations">
-      <ProjectItem ReplaceParameters="true" TargetFileName="InitialCreate.cs">InitialCreate.cs</ProjectItem>
-      <ProjectItem ReplaceParameters="true" TargetFileName="InitialCreate.Designer.cs">InitialCreate.Designer.cs</ProjectItem>
-      <ProjectItem ReplaceParameters="true" TargetFileName="DataContextModelSnapshot.cs">DataContextModelSnapshot.cs</ProjectItem>
-    </Folder>
-
     <Project TargetFileName="$ext_safeprojectname$.Persistence.csproj" File="Persistence.csproj" ReplaceParameters="true">
+      <Folder Name="Configurations" TargetFolderName="Configurations">
+        <ProjectItem ReplaceParameters="true" TargetFileName="MyEntityConfiguration.cs">MyEntityConfiguration.cs</ProjectItem>
+      </Folder>
+      <Folder Name="Migrations" TargetFolderName="Migrations">
+        <ProjectItem ReplaceParameters="true" TargetFileName="InitialCreate.cs">InitialCreate.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="InitialCreate.Designer.cs">InitialCreate.Designer.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="DataContextModelSnapshot.cs">DataContextModelSnapshot.cs</ProjectItem>
+      </Folder>
       <ProjectItem ReplaceParameters="true" TargetFileName="DataContext.cs">DataContext.cs</ProjectItem>
       <ProjectItem ReplaceParameters="true" TargetFileName="DataContextFactory.cs">DataContextFactory.cs</ProjectItem>
       <ProjectItem ReplaceParameters="true" TargetFileName="Repository.cs">Repository.cs</ProjectItem>

@@ -3,12 +3,16 @@ using System;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.DependencyInjection.Extensions;
 using $ext_safeprojectname$.Application;
+using $ext_safeprojectname$.Application.Contracts;
+$if$ ($ext_addSignalR$ == True)using $ext_safeprojectname$.Application.Hubs;$endif$
 using $ext_safeprojectname$.Persistence;
 using $ext_safeprojectname$.Resources;
 $if$ ($ext_addSPA$ == True)using Microsoft.AspNetCore.SpaServices.ReactDevelopmentServer;$endif$
-using Microsoft.Extensions.Hosting;
+using $safeprojectname$.Extensions;
 
 namespace $safeprojectname$
 {

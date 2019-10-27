@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace $safeprojectname$
 {
-	internal class DataContext : DbContext
+	public class DataContext : DbContext
 	{
         public DataContext(DbContextOptions<DataContext> options)
             : base(options)
