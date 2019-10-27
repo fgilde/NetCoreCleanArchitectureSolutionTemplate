@@ -2,6 +2,7 @@
 using System.Windows.Forms;
 using Microsoft.VisualStudio.TemplateWizard;
 using EnvDTE;
+using Microsoft.VisualStudio.Shell;
 
 namespace VSIX_CCA_ProjectTemplate
 {
@@ -11,24 +12,22 @@ namespace VSIX_CCA_ProjectTemplate
         // This method is called before opening any item that
         // has the OpenInEditor attribute.
         public void BeforeOpeningFile(ProjectItem projectItem)
-        {
-        }
+        {}
 
         public void ProjectFinishedGenerating(Project project)
         {
+            excludes.DeleteCreatedExcludes();
         }
 
         // This method is only called for item templates,
         // not for project templates.
         public void ProjectItemFinishedGenerating(ProjectItem
             projectItem)
-        {
-        }
+        {}
 
         // This method is called after the project is created.
         public void RunFinished()
-        {
-        }
+        {}
 
         public void RunStarted(object automationObject,
             Dictionary<string, string> replacementsDictionary,
@@ -46,7 +45,7 @@ namespace VSIX_CCA_ProjectTemplate
         // not for project templates.
         public bool ShouldAddProjectItem(string filePath)
         {
-            return excludes.ShouldInclude(filePath);
+            return true;
         }
     }
 

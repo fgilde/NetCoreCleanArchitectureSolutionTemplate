@@ -25,8 +25,9 @@ namespace $safeprojectname$.RequestHandling.MyEntity
                 using var scope = this.unitOfWork.BeginWrite();
                 var r = scope.EntitiesOf<Domain.Entities.MyEntity>().Insert(new Domain.Entities.MyEntity());
                 await scope.CompleteAsync();
-
-                return scope.EntitiesOf<Domain.Entities.MyEntity>().FirstOrDefault(entity => entity.Id == r.Value);
+                var result = scope.EntitiesOf<Domain.Entities.MyEntity>().FirstOrDefault(entity => entity.Id == r.Value);
+                await mediator.Publish(new ClientEvent(TargetClient.Current, "Entity Created", result), cancellationToken);
+                return result;
             }
         }
 

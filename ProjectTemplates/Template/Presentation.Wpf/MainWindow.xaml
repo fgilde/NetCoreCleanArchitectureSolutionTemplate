@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:$safeprojectname$"
         mc:Ignorable="d"
+        Closing="MainWindow_OnClosing"
         Title="MainWindow" Height="450" Width="800">
     <StackPanel Margin="20" Orientation="Vertical">
         <TextBlock Name="label1">....</TextBlock>

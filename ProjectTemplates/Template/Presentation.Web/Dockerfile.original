@@ -1,0 +1,5 @@
+FROM mcr.microsoft.com/dotnet/core/aspnet:3.0-buster-slim
+EXPOSE 80
+WORKDIR /app
+COPY publish/ .
+ENTRYPOINT ["dotnet", "$ext_safeprojectname$.Presentation.Web.dll"]

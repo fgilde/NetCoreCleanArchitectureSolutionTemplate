@@ -12,6 +12,7 @@
   <TemplateContent>
     <Project TargetFileName="$ext_safeprojectname$.Application.csproj" File="Application.csproj" ReplaceParameters="true">
       <Folder Name="Behaviours" TargetFolderName="Behaviours">
+        <ProjectItem ReplaceParameters="true" TargetFileName="ClientEventBehaviour.cs">ClientEventBehaviour.cs</ProjectItem>
         <ProjectItem ReplaceParameters="true" TargetFileName="LoggingBehaviour.cs">LoggingBehaviour.cs</ProjectItem>
         <ProjectItem ReplaceParameters="true" TargetFileName="ValidationBehaviour.cs">ValidationBehaviour.cs</ProjectItem>
       </Folder>
@@ -20,12 +21,22 @@
           <ProjectItem ReplaceParameters="true" TargetFileName="IUnitOfWork.cs">IUnitOfWork.cs</ProjectItem>
           <ProjectItem ReplaceParameters="true" TargetFileName="IRepository.cs">IRepository.cs</ProjectItem>
         </Folder>
+        <ProjectItem ReplaceParameters="true" TargetFileName="ClientEvent.cs">ClientEvent.cs</ProjectItem>
         <ProjectItem ReplaceParameters="true" TargetFileName="IDateProvider.cs">IDateProvider.cs</ProjectItem>
         <ProjectItem ReplaceParameters="true" TargetFileName="IJsonSerializer.cs">IJsonSerializer.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="IServiceBus.cs">IServiceBus.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="ISessionProvider.cs">ISessionProvider.cs</ProjectItem>
         <ProjectItem ReplaceParameters="true" TargetFileName="SuppressAttribute.cs">SuppressAttribute.cs</ProjectItem>
       </Folder>
 
-    <Folder Name="RequestHandling" TargetFolderName="RequestHandling">
+
+      <Folder Name="Hubs" TargetFolderName="Hubs">
+        <ProjectItem ReplaceParameters="true" TargetFileName="ClientEventDispatcher.cs">ClientEventDispatcher.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="ClientEventHub.cs">ClientEventHub.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="HubBase.cs">HubBase.cs</ProjectItem>
+      </Folder>
+
+      <Folder Name="RequestHandling" TargetFolderName="RequestHandling">
         <Folder Name="MyEntity" TargetFolderName="MyEntity">
           <ProjectItem ReplaceParameters="true" TargetFileName="CreateMyEntity.cs">CreateMyEntity.cs</ProjectItem>
           <ProjectItem ReplaceParameters="true" TargetFileName="DeleteMyEntity.cs">DeleteMyEntity.cs</ProjectItem>
@@ -37,10 +48,12 @@
           </Folder>
           <ProjectItem ReplaceParameters="true" TargetFileName="GetVersion.cs">GetVersion.cs</ProjectItem>
           <ProjectItem ReplaceParameters="true" TargetFileName="InitializeApplication.cs">InitializeApplication.cs</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="SendToServiceBus.cs">SendToServiceBus.cs</ProjectItem>
         </Folder>
-    </Folder>
+      </Folder>
 
       <ProjectItem ReplaceParameters="true" TargetFileName="Constants.cs">Constants.cs</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="RabbitMQServiceBus.cs">RabbitMQServiceBus.cs</ProjectItem>
       <ProjectItem ReplaceParameters="true" TargetFileName="ServiceCollectionExtensions.cs">ServiceCollectionExtensions.cs</ProjectItem>
     </Project>
   </TemplateContent>

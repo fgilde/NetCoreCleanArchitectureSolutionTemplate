@@ -53,6 +53,25 @@
   <ItemGroup>
     <Compile Include="EnumerableExtensions.cs" />
     <Compile Include="ExcludeInfo.cs" />
+    <None Include="ProjectTemplates\Template\Application\RequestHandling\System\SendToServiceBus.cs" />
+    <None Include="ProjectTemplates\Template\Application\Hubs\ClientEventDispatcher.cs" />
+    <None Include="ProjectTemplates\Template\Application\Hubs\ClientEventHub.cs" />
+    <None Include="ProjectTemplates\Template\Application\Hubs\HubBase.cs" />
+    <None Include="ProjectTemplates\Template\Application\Contracts\ClientEvent.cs" />
+    <None Include="ProjectTemplates\Template\Application\Contracts\IServiceBus.cs" />
+    <None Include="ProjectTemplates\Template\Application\Contracts\ISessionProvider.cs" />
+    <None Include="ProjectTemplates\Template\Application\Behaviours\ClientEventBehaviour.cs" />
+    <None Include="ProjectTemplates\Template\Application\RabbitMQServiceBus.cs" />
+    <None Include="ProjectTemplates\Template\Persistence\Migrations\InitialCreate.cs" />
+    <None Include="ProjectTemplates\Template\Persistence\Migrations\InitialCreate.Designer.cs">
+      <DependentUpon>InitialCreate.cs</DependentUpon>
+    </None>
+    <None Include="ProjectTemplates\Template\Persistence\Migrations\DataContextModelSnapshot.cs" />
+    <None Include="ProjectTemplates\Template\Persistence\DataContextFactory.cs" />
+    <None Include="ProjectTemplates\Template\Presentation.Web\Dockerfile" />
+    <None Include="ProjectTemplates\Template\Presentation.Web\Dockerfile.original" />
+    <None Include="ProjectTemplates\Template\Presentation.Web\Extensions\AppBuilderExtensions.cs" />
+    <None Include="ProjectTemplates\Template\Presentation.Web\SessionProvider.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -100,11 +119,16 @@
     <None Include="ProjectTemplates\Template\Presentation.Web\Controllers\SystemController.cs" />
     <None Include="ProjectTemplates\Template\Presentation.Web\Data\WeatherForecast.cs" />
     <None Include="ProjectTemplates\Template\Presentation.Web\Data\WeatherForecastService.cs" />
+    <None Include="ProjectTemplates\Template\Presentation.Web\libman.json" />
     <None Include="ProjectTemplates\Template\Presentation.Web\Program.cs" />
     <None Include="ProjectTemplates\Template\Presentation.Web\Startup.cs" />
+    <None Include="ProjectTemplates\Template\Presentation.Web\wwwroot\js\signalr\dist\browser\signalr.js.map" />
+    <None Include="ProjectTemplates\Template\Presentation.Web\wwwroot\js\signalr\dist\browser\signalr.min.js.map" />
     <None Include="ProjectTemplates\Template\Presentation.Wpf\App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </None>
+    <None Include="ProjectTemplates\Template\Presentation.Wpf\appsettings.Development.json" />
+    <None Include="ProjectTemplates\Template\Presentation.Wpf\appsettings.json" />
     <None Include="ProjectTemplates\Template\Presentation.Wpf\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
     </None>
@@ -132,6 +156,10 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
+    <Content Include="ProjectTemplates\Template\Presentation.Web\wwwroot\js\clientEvent.js" />
+    <Content Include="ProjectTemplates\Template\Presentation.Web\wwwroot\js\signalr\dist\browser\signalr.js" />
+    <Content Include="ProjectTemplates\Template\Presentation.Web\wwwroot\js\signalr\dist\browser\signalr.min.js" />
+    <None Include="ProjectTemplates\Template\Presentation.Web\wwwroot\test.html" />
     <Content Include="__PreviewImage.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

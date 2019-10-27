@@ -52,6 +52,11 @@ namespace $safeprojectname$
             context.Remove(context.Find<T>(id));
         }
 
+        void IRepository<T>.DeleteAll()
+        {
+            context.RemoveRange(queryable);
+        }
+
 
         IEnumerator<T> IEnumerable<T>.GetEnumerator() => this.queryable.GetEnumerator();
 

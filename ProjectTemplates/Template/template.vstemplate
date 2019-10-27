@@ -26,8 +26,8 @@
       <!--Place your default parameter values here-->
       <CustomParameter Name="$addBlazor$" Value="True"/>
       <CustomParameter Name="$addSPA$" Value="True"/>
-      <CustomParameter Name="$addWPF$" Value="False"/>
-      <CustomParameter Name="$addConsole$" Value="False"/>
+      <CustomParameter Name="$addWPF$" Value="True"/>
+      <CustomParameter Name="$addConsole$" Value="True"/>
       <CustomParameter Name="$addSignalR$" Value="True"/>
       <CustomParameter Name="$addServiceBus$" Value="True"/>
       <CustomParameter Name="$enableDocker$" Value="False"/>

@@ -10,5 +10,6 @@ namespace $safeprojectname$.Contracts.Data
         void Update(int id, object values);
         void Delete(T entity);
         void Delete(int id);
+        void DeleteAll();
     }
 }

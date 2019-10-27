@@ -5,6 +5,7 @@ using FluentValidation;
 using MediatR;
 using Microsoft.Extensions.DependencyInjection;
 using $safeprojectname$.Behaviours;
+using $safeprojectname$.Contracts;
 
 namespace $safeprojectname$
 {
@@ -12,11 +13,14 @@ namespace $safeprojectname$
     {
         public static IServiceCollection AddApplication(this IServiceCollection services)
         {
+            services.AddTransient<ISessionProvider, SimpleSessionProvider>();
+            services.AddSignalR();
             services.AddValidators();
             services.AddTransient(typeof(IPipelineBehavior<,>), typeof(LoggingBehaviour<,>));
+            services.AddTransient(typeof(IPipelineBehavior<,>), typeof(ClientEventBehaviour<,>));
             services.AddTransient(typeof(IPipelineBehavior<,>), typeof(ValidationBehaviour<,>));
             services.AddMediatR(typeof(ServiceCollectionExtensions).Assembly);
-
+            services.AddTransient<IServiceBus, RabbitMQServiceBus>();
             return services;
         }
 

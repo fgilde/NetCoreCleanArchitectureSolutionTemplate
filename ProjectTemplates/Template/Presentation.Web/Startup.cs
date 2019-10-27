@@ -7,7 +7,7 @@ using Microsoft.Extensions.DependencyInjection;
 using $ext_safeprojectname$.Application;
 using $ext_safeprojectname$.Persistence;
 using $ext_safeprojectname$.Resources;
-using Microsoft.AspNetCore.SpaServices.ReactDevelopmentServer;
+$if$ ($ext_addSPA$ == True)using Microsoft.AspNetCore.SpaServices.ReactDevelopmentServer;$endif$
 using Microsoft.Extensions.Hosting;
 
 namespace $safeprojectname$
@@ -24,10 +24,13 @@ namespace $safeprojectname$
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddApplication();
+            $if$ ($ext_addSignalR$ == True)
+            services.AddSession();
+            services.AddHttpContextAccessor();
+            services.RemoveAll<ISessionProvider>().AddTransient<ISessionProvider, SessionProvider>();
+            $endif$
             services.AddResources();
             services.AddPersistence(this.configuration.GetConnectionString("default"));
-    //SPA $ext_addSPA$
-    //Blazor $ext_addBlazor$
             $if$ ($ext_addSPA$ == True)
             services.AddSpaStaticFiles(spa => { spa.RootPath = "<path to client build in production>"; });
             $endif$
@@ -36,31 +39,33 @@ namespace $safeprojectname$
             services.AddServerSideBlazor();
             services.AddSingleton<WeatherForecastService>();
             $endif$
+            services.AddCors(options => options.AddPolicy("CorsPolicy",
+                builder =>
+                {
+                    builder.AllowAnyMethod().AllowAnyHeader()
+                        .AllowAnyOrigin();
+                }));
+        
             services.AddMvc();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            if (env.IsDevelopment())
-            {
-                app.UseDeveloperExceptionPage();
-            }
-            else
-            {
-                app.UseExceptionHandler("/Error");
-                // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
-                app.UseHsts();
-            }
+            app.UseEnvironment(env);
+            $if$ ($ext_addSignalR$ == True)
+            app.UseSession();
+            app.UseSessionId();
+            $endif$
+            app.UseCors("CorsPolicy");
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();
-            app.UseSpaStaticFiles();
+            $if$ ($ext_addSPA$ == True)app.UseSpaStaticFiles();$endif$
             app.UseRouting();
             app.UseEndpoints(endpoints => {
                 endpoints.MapControllers();
-                $if$ ($ext_addBlazor$ == True)
-                endpoints.MapBlazorHub();
-                $endif$
+                $if$ ($ext_addBlazor$ == True)endpoints.MapBlazorHub(); $endif$
+                $if$ ($ext_addSignalR$ == True)endpoints.MapHub<ClientEventHub>("/eventHub"); $endif$
                 endpoints.MapFallbackToPage("/_Host");
             });
             
@@ -73,6 +78,9 @@ namespace $safeprojectname$
                     spa.UseReactDevelopmentServer(npmScript: "start");
                 }
             });
+            $endif$
+            $if$ ($ext_addSignalR$ == True)
+            $if$ ($ext_addServiceBus$ == True)app.UseServiceBusClientEventDelegation();$endif$
             $endif$
         }
     }

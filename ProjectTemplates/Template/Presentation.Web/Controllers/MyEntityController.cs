@@ -13,14 +13,14 @@ namespace $safeprojectname$.Controllers
             return Ok(await Mediator.Send(new GetMyEntity.Request()));
         }
 
-        [HttpGet]
-        public async Task<ActionResult<MyEntity>> Create()
+        [HttpGet("{name}")]
+        public async Task<ActionResult<MyEntity>> Create(string name)
         {
-            return Ok(await Mediator.Send(new CreateMyEntity.Request()));
+            return Ok(await Mediator.Send(new CreateMyEntity.Request { Name = name }));
         }
 
-        [HttpGet("{id}")]
-        public async Task<ActionResult> Delete(int id)
+        [HttpGet("{id?}")]
+        public async Task<ActionResult> Delete(int? id = null)
         {
             return Ok(await Mediator.Send(new DeleteMyEntity.Request { Id = id }));
         }

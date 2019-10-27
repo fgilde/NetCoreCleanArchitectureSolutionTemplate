@@ -5,11 +5,13 @@ namespace $safeprojectname$
 {
 	internal class DataContext : DbContext
 	{
-        public DataContext(DbContextOptions options)
-			: base(options)
-		{ }
+        public DataContext(DbContextOptions<DataContext> options)
+            : base(options)
+        {
+            this.Database.Migrate();
+        }
 
-		protected override void OnModelCreating(ModelBuilder modelBuilder) 
-			=> modelBuilder.ApplyConfigurationsFromAssembly(GetType().Assembly);
+        protected override void OnModelCreating(ModelBuilder modelBuilder) 
+			    => modelBuilder.ApplyConfigurationsFromAssembly(GetType().Assembly);
 	}
 }

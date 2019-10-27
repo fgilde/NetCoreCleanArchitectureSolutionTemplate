@@ -17,15 +17,13 @@ namespace $safeprojectname$
                 var environment = sp.GetService<IHostEnvironment>();
                 if (environment.IsEnvironment(Constants.Environment.Testing))
                 {
-                    // builder.UseSqlite(connectionString);
+                    builder.UseInMemoryDatabase($"{Guid.NewGuid().ToString()}-{connectionString}");
                 }
                 else
                 {
-                    //builder.UseSqlServer(connectionString);
-                    builder.UseInMemoryDatabase($"{Guid.NewGuid().ToString()}-{connectionString}");
+                    builder.UseSqlite(connectionString);
                 }
 
-                builder.UseInMemoryDatabase($"{Guid.NewGuid().ToString()}-{connectionString}");
                 builder.UseLoggerFactory(sp.GetService<ILoggerFactory>());
                 builder.EnableSensitiveDataLogging();
             });

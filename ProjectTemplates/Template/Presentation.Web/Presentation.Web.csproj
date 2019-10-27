@@ -2,14 +2,24 @@
 
 	<PropertyGroup>
 		<TargetFramework>netcoreapp3.0</TargetFramework>
-	</PropertyGroup>
+    $if$ ($ext_enableDocker$ == True)
+    <DockerDefaultTargetOS>Windows</DockerDefaultTargetOS>
+    <DockerfileContext>..\..</DockerfileContext>
+    $endif$
+  </PropertyGroup>
 
 	<Import Project="..\$ext_safeprojectname$.Domain\shared.props" />
 
 	<ItemGroup>
+    $if$ ($ext_addSPA$ == True)
     <PackageReference Include="Microsoft.AspNetCore.SpaServices" Version="3.0.0" />
 		<PackageReference Include="Microsoft.AspNetCore.SpaServices.Extensions" Version="3.0.0" />
-
+    $endif$
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="3.0.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.9.5" />
 	</ItemGroup>
 
 	<ItemGroup>

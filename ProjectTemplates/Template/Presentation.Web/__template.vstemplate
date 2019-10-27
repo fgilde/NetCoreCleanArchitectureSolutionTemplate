@@ -23,6 +23,9 @@
         <ProjectItem ReplaceParameters="true" TargetFileName="WeatherForecastService.cs">WeatherForecastService.cs</ProjectItem>
         <ProjectItem ReplaceParameters="true" TargetFileName="WeatherForecast.cs">WeatherForecast.cs</ProjectItem>
       </Folder>
+      <Folder Name="Extensions" TargetFolderName="Extensions">
+        <ProjectItem ReplaceParameters="true" TargetFileName="AppBuilderExtensions.cs">AppBuilderExtensions.cs</ProjectItem>
+      </Folder>
       <Folder Name="Pages" TargetFolderName="Pages">
         <ProjectItem ReplaceParameters="true" TargetFileName="_Host.cshtml">_Host.cshtml</ProjectItem>
         <ProjectItem ReplaceParameters="true" TargetFileName="Counter.razor">Counter.razor</ProjectItem>
@@ -36,33 +39,51 @@
       </Folder>
       <Folder Name="wwwroot" TargetFolderName="wwwroot">
         <ProjectItem ReplaceParameters="false" TargetFileName="FavIcon.ico">FavIcon.ico</ProjectItem>
+        <ProjectItem ReplaceParameters="True" TargetFileName="test.html">test.html</ProjectItem>
+        <Folder Name="js" TargetFolderName="js">
+          <Folder Name="signalr" TargetFolderName="signalr">
+            <Folder Name="dist" TargetFolderName="dist">
+              <Folder Name="browser" TargetFolderName="browser">
+                <ProjectItem ReplaceParameters="True" TargetFileName="signalr.js">signalr.js</ProjectItem>
+                <ProjectItem ReplaceParameters="True" TargetFileName="signalr.js.map">signalr.js.map</ProjectItem>
+                <ProjectItem ReplaceParameters="True" TargetFileName="signalr.min.js">signalr.min.js</ProjectItem>
+                <ProjectItem ReplaceParameters="True" TargetFileName="signalr.min.js.map">signalr.min.js.map</ProjectItem>
+              </Folder>
+            </Folder>
+          </Folder>
+          <ProjectItem ReplaceParameters="true" TargetFileName="clientEvent.js">clientEvent.js</ProjectItem>
+        </Folder>
         <Folder Name="css" TargetFolderName="css">
           <ProjectItem ReplaceParameters="true" TargetFileName="site.css">site.css</ProjectItem>
           <Folder Name="bootstrap" TargetFolderName="bootstrap">
             <ProjectItem ReplaceParameters="true" TargetFileName="bootstrap.min.css">bootstrap.min.css</ProjectItem>
             <ProjectItem ReplaceParameters="true" TargetFileName="bootstrap.min.css.map">bootstrap.min.css.map</ProjectItem>
-          </Folder>   
+          </Folder>
           <Folder Name="open-iconic" TargetFolderName="open-iconic">
             <Folder Name="font" TargetFolderName="font">
               <Folder Name="css" TargetFolderName="css">
                 <ProjectItem ReplaceParameters="true" TargetFileName="open-iconic-bootstrap.min.css">open-iconic-bootstrap.min.css</ProjectItem>
-              </Folder>   
+              </Folder>
               <Folder Name="fonts" TargetFolderName="fonts">
                 <ProjectItem ReplaceParameters="false" TargetFileName="open-iconic.eot">open-iconic.eot</ProjectItem>
                 <ProjectItem ReplaceParameters="false" TargetFileName="open-iconic.otf">open-iconic.otf</ProjectItem>
                 <ProjectItem ReplaceParameters="false" TargetFileName="open-iconic.svg">open-iconic.svg</ProjectItem>
                 <ProjectItem ReplaceParameters="false" TargetFileName="open-iconic.ttf">open-iconic.ttf</ProjectItem>
                 <ProjectItem ReplaceParameters="false" TargetFileName="open-iconic.woff">open-iconic.woff</ProjectItem>
-              </Folder>   
-            </Folder>                      
+              </Folder>
+            </Folder>
+          </Folder>
         </Folder>
-      </Folder>
       </Folder>
 
       <ProjectItem ReplaceParameters="true" TargetFileName="_Imports.razor">_Imports.razor</ProjectItem>
       <ProjectItem ReplaceParameters="true" TargetFileName="App.razor">App.razor</ProjectItem>
       <ProjectItem ReplaceParameters="true" TargetFileName="appsettings.json">appsettings.json</ProjectItem>
       <ProjectItem ReplaceParameters="true" TargetFileName="appsettings.Development.json">appsettings.Development.json</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="Dockerfile">Dockerfile</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="Dockerfile.original">Dockerfile.original</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="libman.json">libman.json</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="SessionProvider.cs">SessionProvider.cs</ProjectItem>
       <ProjectItem ReplaceParameters="true" TargetFileName="Program.cs">Program.cs</ProjectItem>
       <ProjectItem ReplaceParameters="true" TargetFileName="Startup.cs">Startup.cs</ProjectItem>
     </Project>
