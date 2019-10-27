@@ -18,12 +18,11 @@ namespace $safeprojectname$
                 var factory = new ConnectionFactory
                 {
                     //TODO: extract to a config
-                    HostName = "sandbox-rabbitmq.service.fsn.consul-internal.sabio.de",
-                    //VirtualHost = "/api/vhosts",
+                    HostName = "your-rabbit-mq-server.de",
                     Port = 5672,
                     Protocol = Protocols.AMQP_0_9_1,
                     UserName = "admin",
-                    Password = "yYCWh5iLhx4BHfvClAR0dAv9"
+                    Password = ""
                 };
 
                 using var connection = factory.CreateConnection();
