@@ -33,9 +33,10 @@ namespace VSIX_CCA_ProjectTemplate
             Dictionary<string, string> replacementsDictionary,
             WizardRunKind runKind, object[] customParams)
         {
-            var wizard = new WizardDialogForm(replacementsDictionary);
-            wizard.ShowDialog();
-            foreach (var param in wizard.AllCustomParameters)
+            
+            var window = new TemplateSettingsWindow(replacementsDictionary);
+            window.ShowDialog();
+            foreach (var param in window.Parameters)
                 replacementsDictionary.AddOrUpdate(param.Key, param.Value);
 
             excludes = new ExcludeInfo(replacementsDictionary);

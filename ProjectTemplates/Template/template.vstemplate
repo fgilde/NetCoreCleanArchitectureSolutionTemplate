@@ -31,6 +31,10 @@
       <CustomParameter Name="$addSignalR$" Value="True"/>
       <CustomParameter Name="$addServiceBus$" Value="True"/>
       <CustomParameter Name="$enableDocker$" Value="True"/>
+      <CustomParameter Name="$singlePageApp$" Value="React"/>
+      <CustomParameter Name="$rabbitServer$" Value="your-rabbit-mq-server.de"/>
+      <CustomParameter Name="$rabbitUser$" Value="admin"/>
+      <CustomParameter Name="$rabbitPass$" Value=""/>
     </CustomParameters>
     <ProjectCollection>
       <SolutionFolder Name="src">

@@ -18,11 +18,11 @@ namespace $safeprojectname$
                 var factory = new ConnectionFactory
                 {
                     //TODO: extract to a config
-                    HostName = "your-rabbit-mq-server.de",
+                    HostName = "$ext_rabbitServer$",
                     Port = 5672,
                     Protocol = Protocols.AMQP_0_9_1,
-                    UserName = "admin",
-                    Password = ""
+                    UserName = "$ext_rabbitUser$",
+                    Password = "$ext_rabbitPass$"
                 };
 
                 using var connection = factory.CreateConnection();

@@ -61,7 +61,6 @@ namespace $safeprojectname$
             app.UseSessionId();
             $endif$
             app.UseCors("CorsPolicy");
-
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             $if$ ($ext_addSPA$ == True)app.UseSpaStaticFiles();$endif$
