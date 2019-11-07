@@ -43,14 +43,33 @@ namespace $safeprojectname$
             services.AddServerSideBlazor();
             services.AddSingleton<WeatherForecastService>();
             $endif$
+            
             services.AddCors(options => options.AddPolicy("CorsPolicy",
                 builder =>
                 {
                     builder.AllowAnyMethod().AllowAnyHeader()
                         .AllowAnyOrigin();
                 }));
-        
-            services.AddMvc();
+
+            $if$ ($ext_addSwagger$ == True)
+            services.AddSwaggerDocument(config =>
+            {
+                config.PostProcess = document =>
+                {
+                    document.Info.Version = "v0.1";
+                    document.Info.Title = Constants.ApplicationName;
+                    document.Info.Description = $"{Constants.ApplicationName} API Reference";
+                };
+            });
+            $endif$
+
+            services.AddResponseCompression(opts =>
+            {
+                opts.MimeTypes = ResponseCompressionDefaults.MimeTypes.Concat(
+                    new[] { "application/octet-stream" });
+            });
+
+        services.AddMvc();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -65,6 +84,12 @@ namespace $safeprojectname$
             app.UseStaticFiles();
             $if$ ($ext_addSPA$ == True)app.UseSpaStaticFiles();$endif$
             app.UseRouting();
+                
+            $if$ ($ext_addSwagger$ == True)
+            app.UseOpenApi();
+            app.UseSwaggerUi3();
+            $endif$
+
             app.UseEndpoints(endpoints => {
                 endpoints.MapControllers();
                 $if$ ($ext_addBlazor$ == True) endpoints.MapBlazorHub(); $endif$

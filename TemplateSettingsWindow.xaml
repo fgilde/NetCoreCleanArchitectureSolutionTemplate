@@ -48,6 +48,7 @@
             </StackPanel>
 
             <StackPanel Margin="10" Grid.Column="2">
+                <CheckBox Margin="0,0,0,5" IsChecked="{Binding Parameters[$addSwagger$], Converter={StaticResource stringToBool}}" Content="Add Swagger OpenApi documentation"/>
                 <CheckBox Margin="0,0,0,5" IsChecked="{Binding Parameters[$addSignalR$], Converter={StaticResource stringToBool}}" Content="Add Client Events with SignalR"/>
                 <CheckBox x:Name="checkRabbit" Margin="0,0,0,5" IsChecked="{Binding Parameters[$addServiceBus$], Converter={StaticResource stringToBool}}" Content="Add RabbitMQ Service Bus"/>
                 <StackPanel Margin="15,5,0,0" Visibility="{Binding ElementName=checkRabbit, Path=IsChecked, Converter={StaticResource boolToVis}}">

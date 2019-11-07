@@ -29,6 +29,7 @@
       <CustomParameter Name="$addWPF$" Value="True"/>
       <CustomParameter Name="$addConsole$" Value="True"/>
       <CustomParameter Name="$addSignalR$" Value="True"/>
+      <CustomParameter Name="$addSwagger$" Value="True"/>
       <CustomParameter Name="$addServiceBus$" Value="True"/>
       <CustomParameter Name="$enableDocker$" Value="True"/>
       <CustomParameter Name="$singlePageApp$" Value="React"/>

@@ -20,7 +20,10 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
     <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.9.5" />
-	</ItemGroup>
+    $if$ ($ext_addSwagger$ == True)
+    <PackageReference Include="NSwag.AspNetCore" Version="13.1.3" />
+    $endif$
+  </ItemGroup>
 
 	<ItemGroup>
 		<ProjectReference Include="..\$ext_safeprojectname$.Application\$ext_safeprojectname$.Application.csproj" />
