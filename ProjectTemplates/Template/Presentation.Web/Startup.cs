@@ -63,11 +63,6 @@ namespace $safeprojectname$
             });
             $endif$
 
-            services.AddResponseCompression(opts =>
-            {
-                opts.MimeTypes = ResponseCompressionDefaults.MimeTypes.Concat(
-                    new[] { "application/octet-stream" });
-            });
 
         services.AddMvc();
         }
